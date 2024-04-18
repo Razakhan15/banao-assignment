@@ -262,26 +262,21 @@ const Notloggedin = () => {
             class="nav"
           >
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <a
-                style={{ color: "black" }}
-                class="nav-link active"
-                aria-current="page"
-                href="#"
-              >
+              <button style={{ color: "black" }} class="nav-link active">
                 All Posts(32)
-              </a>
-              <a style={{ color: "#8A8A8A" }} class="nav-link" href="#">
+              </button>
+              <button style={{ color: "#8A8A8A" }} class="nav-link">
                 Article
-              </a>
-              <a style={{ color: "#8A8A8A" }} class="nav-link" href="#">
+              </button>
+              <button style={{ color: "#8A8A8A" }} class="nav-link">
                 Event
-              </a>
-              <a style={{ color: "#8A8A8A" }} class="nav-link" href="#">
+              </button>
+              <button style={{ color: "#8A8A8A" }} class="nav-link">
                 Education
-              </a>
-              <a style={{ color: "#8A8A8A" }} class="nav-link" href="#">
+              </button>
+              <button style={{ color: "#8A8A8A" }} class="nav-link">
                 Job
-              </a>
+              </button>
             </div>
             <div style={{ display: "flex", flexDirection: "row" }}>
               <div
@@ -1187,8 +1182,8 @@ const Notloggedin = () => {
               </p>
             </div>
             <h6>
-              <img style={{ marginTop: "-5px" }} src={likeicon} /> RECOMMENDED
-              GROUPS
+              <img alt="" style={{ marginTop: "-5px" }} src={likeicon} />{" "}
+              RECOMMENDED GROUPS
             </h6>
             <div>
               <div className="d-flex flex-row align-items-center justify-content-between">
@@ -1896,12 +1891,9 @@ const Notloggedin = () => {
         </div>
       </div>
       {!breaking_point_desktop && (
-        <a
-          href="#"
-          style={{ position: "fixed", right: "10px", bottom: "10px" }}
-        >
+        <button style={{ position: "fixed", right: "10px", bottom: "10px" }}>
           <img style={{ cursor: "pointer" }} alt="float" src={float} />
-        </a>
+        </button>
       )}
     </div>
   );
