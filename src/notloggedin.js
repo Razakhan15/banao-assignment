@@ -34,21 +34,10 @@ import fblogo from "./images/fb_logo.png";
 import float from "./images/float.png";
 import abstract from "./images/abstract.png";
 const Notloggedin = () => {
-  const [follow_groups, setFollow_groups] = useState([
-    [rec4, "Leisure", false],
-    [rec5, "Activism", false],
-    [rec6, "MBA", false],
-    [rec7, "Philosophy", false],
-  ]);
   const [location_edit_enabled, setLocation_edit_enabled] = useState(false);
   const [location_update, setLocation_update] = useState("Noida, India");
   const [user_signed_in, setUser_signed_in] = useState(false);
-  const Updating_follow_grp = (clicked_group) => {
-    follow_groups.map((group, index) => {
-      group[1] === clicked_group && (follow_groups[index][2] = !group[2]);
-    });
-    setFollow_groups([...follow_groups]);
-  };
+
   const breaking_point_desktop = useMediaQuery({ query: "(min-width: 790px)" });
   const breaking_point_mobile = useMediaQuery({ query: "(min-width: 400px)" });
   return (
@@ -147,15 +136,15 @@ const Notloggedin = () => {
                 >
                   Create account.
                   <span style={{ color: "blue" }}> It's free!</span>
-                </button>
-                <button
-                  disabled
-                  type="button"
-                  class="btn btn-sm dropdown-toggle dropdown-toggle-split"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <span class="visually-hidden">Toggle Dropdown</span>
+                  <button
+                    disabled
+                    type="button"
+                    class="btn border-0 btn-sm dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                  </button>
                 </button>
               </>
             )}
@@ -1197,74 +1186,54 @@ const Notloggedin = () => {
                 personalised experience.
               </p>
             </div>
-              <div>
-                <div className="d-flex flex-row align-items-center justify-content-between"><img className="mt-3" style={{ width: "40px", height: "40px" }} src={u1} alt="" /><span>Leisure</span><button className="border-0 p-2">Follow</button></div>
-                <div className="d-flex flex-row align-items-center justify-content-between"><img className="mt-3" style={{ width: "40px", height: "40px" }} src={u2} alt="" /><span>Activism</span><button className="border-0 p-2">Follow</button></div>
-                <div className="d-flex flex-row align-items-center justify-content-between"><img className="mt-3" style={{ width: "40px", height: "40px" }} src={u3} alt="" /><span>MBA</span><button className="border-0 p-2">Follow</button></div>
-                <div className="d-flex flex-row align-items-center justify-content-between"><img className="mt-3" style={{ width: "40px", height: "40px" }} src={u4} alt="" /><span>Philosophy</span><button className="border-0 p-2">Follow</button></div>
-                <button className="text-primary mt-3 border-0 bg-white">see more...</button>
+            <h6>
+              <img style={{ marginTop: "-5px" }} src={likeicon} /> RECOMMENDED
+              GROUPS
+            </h6>
+            <div>
+              <div className="d-flex flex-row align-items-center justify-content-between">
+                <img
+                  className="mt-3"
+                  style={{ width: "40px", height: "40px" }}
+                  src={rec4}
+                  alt=""
+                />
+                <span>Leisure</span>
+                <button className="border-0 p-2">Follow</button>
               </div>
-            <div style={{ display: !user_signed_in && "none" }}>
-              <br />
-              <br />
-              <h6>
-                <img style={{ marginTop: "-5px" }} src={likeicon} /> RECOMMENDED
-                GROUPS
-              </h6>
-              {follow_groups.map((group) => (
-                <>
-                  <br />
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <div style={{ display: "flex" }}>
-                      <img
-                        style={{ width: "40px", height: "40px" }}
-                        src={group[0]}
-                        alt="grp1"
-                      />
-                      &nbsp;&nbsp;
-                      <h6
-                        style={{
-                          fontSize: "15px",
-                          fontWeight: "600",
-                          marginTop: "10px",
-                        }}
-                      >
-                        {group[1]}
-                      </h6>
-                    </div>
-                    <button
-                      onClick={() => Updating_follow_grp(group[1])}
-                      type="button"
-                      style={{
-                        backgroundColor: group[2] ? "black" : "#EDEEF0",
-                        borderRadius: "21px",
-                        color: group[2] ? "white" : "black",
-                        width: group[2] ? "100px" : "85px",
-                        height: "30px",
-                        marginTop: "6px",
-                        paddingTop: "2px",
-                      }}
-                      class="btn"
-                    >
-                      {group[2] ? "Followed" : "Follow"}
-                    </button>
-                  </div>
-                </>
-              ))}
-              <br />
-              <br />
-              <br />
-              <p
-                style={{
-                  color: "#2F6CE5",
-                  fontSize: "13px",
-                  textAlign: "right",
-                }}
-              >
-                See More...
-              </p>
+              <div className="d-flex flex-row align-items-center justify-content-between">
+                <img
+                  className="mt-3"
+                  style={{ width: "40px", height: "40px" }}
+                  src={rec5}
+                  alt=""
+                />
+                <span>Activism</span>
+                <button className="border-0 p-2">Follow</button>
+              </div>
+              <div className="d-flex flex-row align-items-center justify-content-between">
+                <img
+                  className="mt-3"
+                  style={{ width: "40px", height: "40px" }}
+                  src={rec6}
+                  alt=""
+                />
+                <span>MBA</span>
+                <button className="border-0 p-2">Follow</button>
+              </div>
+              <div className="d-flex flex-row align-items-center justify-content-between">
+                <img
+                  className="mt-3"
+                  style={{ width: "40px", height: "40px" }}
+                  src={rec7}
+                  alt=""
+                />
+                <span>Philosophy</span>
+                <button className="border-0 p-2">Follow</button>
+              </div>
+              <button className="text-primary mt-3 border-0 bg-white">
+                see more...
+              </button>
             </div>
           </div>
         )}
